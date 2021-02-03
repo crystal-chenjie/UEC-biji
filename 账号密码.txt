@@ -1,0 +1,152 @@
+SVN 账号密码
+chengjie
+7dk5*U1d#uj^L2G/
+ https://10.0.1.200/svn/wuxiaxmobile/branches/WuXiaXRun
+
+安装小番茄
+dll 文件路径
+C:\Users\admin\AppData\Local\Microsoft\VisualStudio\16.0_d80e46ba\Extensions\ys0ny4pe.nln
+回去搞个文件 替换就行
+
+修改大小
+工具-自定义-命令切页-工具栏-下拉选标准-下面预览窗口选解决方案配置-右边修改所选内容-65改成165
+
+内网地址：
+ftp://10.0.1.200/mobile/201/2888/
+verftp
+verftp@0607
+
+项目管理 tendao
+chenjie
+1v;d6@CK$L+qd91=
+
+101.132.72.159
+http://101.132.72.159:9998/
+10.0.1.201
+
+\\10.0.1.201\ui专用文件夹
+
+
+bulletin_connect_ip 热更新路径
+
+提前一个小时 拉最新的包打包
+merge 之前 需要将对应的 蓝图类 更新
+在分支上时 更改一个就提交一下
+
+start ./WuXiaX.exe  -wxx_cmd_size=900x480w -wxx_cmd_AIGameMode=1
+ping -n 2 127.0.0.1
+start ./WuXiaX.exe -wxx_cmd_size=900x480w -wxx_cmd_AIGameMode=1
+ping -n 2 127.0.0.1
+start ./WuXiaX.exe -wxx_cmd_size=900x480w -wxx_cmd_AIGameMode=1
+ping -n 2 127.0.0.1
+start ./WuXiaX.exe -wxx_cmd_size=900x480w -wxx_cmd_AIGameMode=1
+ping -n 2 127.0.0.1
+
+
+
+1.排队请求
+HomePageWidget请求排队 GameLineUpRequest
+2.上龙舟后，跳伞按钮开始显示
+AWuXiaXHUD::ShowJumpPlanTips()
+3.结算
+BP_StatisticsWidget 蓝图  ReturnHall
+
+
+	/**  玩家开始组队*/
+	UFUNCTION(BlueprintCallable, Category = "AIPlayerAutoRun")
+	void SetAIPlayerAutoLineUp();
+
+	/* 玩家开始跳伞*/
+	UFUNCTION(BlueprintCallable, Category = "AIPlayerAutoRun")
+	void SetAIPlayerAutoJump();
+
+	/**  玩家开始降落*/
+	UFUNCTION(BlueprintCallable , Category = "AIPlayerAutoRun")
+	void SetAIPlayerRandomLandPos();
+
+	/** 玩家退出游戏*/
+	UFUNCTION(BlueprintCallable, Category = "AIPlayerAutoRun")
+	void  SetAIPlayerAutoReturnHall();
+
+
+https://docs.unrealengine.com/zh-CN/ProductionPipelines/DevelopmentSetup/VisualStudioSetup/UnrealVS/index.html
+
+
+AClientNetMessageHandle  UAIAutoRunHandle::GetAIClientNetActor()
+{
+	// 通过instance 获得网络对象
+	auto game_instance = Cast<UWuXiaXGameInstance>(GetWorld()->GetGameInstance());
+	if (game_instance)
+	{
+		auto net_actor = Cast<AClientNetMessageHandle>(game_instance->GetNetActor());
+		if (net_actor)
+		{
+			return net_actor;
+		}
+	}
+	return NULL;
+}
+
+
+/** 获得网络对象- clientNetMessageHandle*/
+UFUNCTION(BlueprintCallable, Category = "AIPlayerAutoRun")
+AClientNetMessageHandle* GetAIClientNetActor();
+
+
+AClientNetMessageHandle*  UAIAutoRunHandle::GetAIClientNetActor()
+{
+	// 通过instance 获得网络对象
+	auto game_instance = Cast<UWuXiaXGameInstance>(GetWorld()->GetGameInstance());
+	if (game_instance)
+	{
+		auto net_actor = Cast<AClientNetMessageHandle>(game_instance->GetNetActor());
+		if (net_actor)
+		{
+			return net_actor;
+		}
+	}
+	return nullptr;
+}
+UAIAutoRunHandle::GetAIClientNetActor()->SendLoginMsg(); // 调用
+
+
+@全体成员 客户端通过201服务器连接自己游戏服规范：
+      连接对应的游戏服前需要关闭当前201已开启的此游戏服进程，节点名需要改成对应游戏服节点名，mobiletest之后会被拦截，测试完后需开启201对应此游戏服进程！
+   大逃杀模式：openserver   开启/wuxiamobile/startopengame.sh     关闭/wuxiamobile/stopopengame.sh
+   擂台：openserver4          开启/wuxiamobile-pk/startopengame.sh 关闭 /wuxiamobile-pk/stopopengame.sh
+   训练场：openserver2       开启/wuxiamobile-Traing/startopengame.sh 关闭/wuxiamobile-Traing/stopopengame.sh
+
+
+
+好友列表
+
+添加好友关系
+void AClientNetMessageHandle::AddRelationRequest
+void AClientNetMessageHandle::AddRelationResponse（）
+
+void AClientNetMessageHandle::SendFriendRequest
+void AClientNetMessageHandle::AllowFriendApplyRequest
+
+
+邮件页面换UI 2h 100%
+机器人聊天加好友 4h 40% 预计剩余 16h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
